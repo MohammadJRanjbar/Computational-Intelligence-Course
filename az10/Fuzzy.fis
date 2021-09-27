@@ -1,0 +1,61 @@
+[System]
+Name='Fuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=15
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Error'
+Range=[-20 20]
+NumMFs=3
+MF1='Low':'trimf',[-36.17 -20.17 -4.168]
+MF2='Mid':'trimf',[-5.068 0 5.072]
+MF3='High':'trimf',[4 20 36]
+
+[Input2]
+Name='V_dot'
+Range=[-50 50]
+NumMFs=3
+MF1='low':'trimf',[-90 -50 -10]
+MF2='mid':'trimf',[-9.95 0.2115 11.21]
+MF3='high':'trimf',[10 50 90]
+
+[Input3]
+Name='Teta'
+Range=[-60 60]
+NumMFs=3
+MF1='low':'trimf',[-108 -60 -12]
+MF2='mid':'trimf',[-12.68 0 12.94]
+MF3='high':'trimf',[12 60 108]
+
+[Output1]
+Name='T_P'
+Range=[0 60]
+NumMFs=3
+MF1='low':'trimf',[-24 0 24]
+MF2='mid':'trimf',[23.8 29.5 36.3424947145877]
+MF3='high':'trimf',[36 60 84]
+
+[Rules]
+1 0 0, 3 (1) : 1
+2 0 0, 2 (1) : 1
+3 0 0, 1 (1) : 1
+0 0 3, 1 (1) : 1
+0 0 2, 2 (1) : 1
+0 0 1, 3 (1) : 1
+1 0 3, 2 (1) : 1
+1 0 2, 3 (1) : 1
+1 0 1, 3 (1) : 1
+2 0 2, 2 (1) : 1
+2 0 1, 3 (1) : 1
+2 0 3, 1 (1) : 1
+3 0 3, 1 (1) : 1
+3 0 2, 1 (1) : 1
+3 0 1, 2 (1) : 1
