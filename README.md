@@ -1,1 +1,1 @@
-# Computational-Intelligence-Lab-
+# Computational-Intelligence-Course
